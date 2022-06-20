@@ -1,0 +1,11 @@
+.text-heimdal-600 {
+    color: rgba(68, 64, 220, 1);
+}
+
+.text-heimdal-600-hover:hover {
+    color: rgb(49, 44, 188);
+}
+
+.bg-heimdal-600 {
+    color: rgba(68, 64, 220, 1);
+}
