@@ -49,7 +49,7 @@ import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user-dropdown.component";
 
 import { HttpClientModule } from "@angular/common/http";
-import { CardModalComponent } from "./app/components/cards/card-modal/card-modal.component";
+import { CardModalComponent } from "./components/cards/card-modal/card-modal.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({

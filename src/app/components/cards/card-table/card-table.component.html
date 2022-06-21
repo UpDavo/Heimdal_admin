@@ -2,7 +2,7 @@
     <div class="rounded-t mb-0 px-4 py-3 border-0">
         <div class="flex flex-wrap items-center">
             <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-                <h3 class="font-semibold text-lg" [ngClass]="color === 'light' ? 'text-blueGray-700' : 'text-white'">
+                <h3 class="font-semibold text-lg" [ngClass]="color === 'light' ? 'text-slate-700' : 'text-white'">
                     Pocs Currently Working
                 </h3>
             </div>
@@ -18,42 +18,42 @@
                 <tr>
                     <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left" [ngClass]="
               color === 'light'
-                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                ? 'bg-slate-50 text-slate-500 border-slate-100'
                 : 'bg-red-800 text-red-300 border-red-700'
             ">
                         Poc ID
                     </th>
                     <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left" [ngClass]="
               color === 'light'
-                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                ? 'bg-slate-50 text-slate-500 border-slate-100'
                 : 'bg-red-800 text-red-300 border-red-700'
             ">
                         Name
                     </th>
                     <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left" [ngClass]="
               color === 'light'
-                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                ? 'bg-slate-50 text-slate-500 border-slate-100'
                 : 'bg-red-800 text-red-300 border-red-700'
             ">
                         Phone
                     </th>
                     <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left" [ngClass]="
               color === 'light'
-                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                ? 'bg-slate-50 text-slate-500 border-slate-100'
                 : 'bg-red-800 text-red-300 border-red-700'
             ">
                         Direction
                     </th>
                     <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left" [ngClass]="
               color === 'light'
-                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                ? 'bg-slate-50 text-slate-500 border-slate-100'
                 : 'bg-red-800 text-red-300 border-red-700'
             ">
                         Mothly Work
                     </th>
                     <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left" [ngClass]="
               color === 'light'
-                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                ? 'bg-slate-50 text-slate-500 border-slate-100'
                 : 'bg-red-800 text-red-300 border-red-700'
             "></th>
                 </tr>
@@ -62,7 +62,7 @@
                 <tr *ngFor="let poc of pocs">
                     <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
                         <!-- <img src="assets/img/bootstrap.jpg" class="h-12 w-12 bg-white rounded-full border" alt="..." /> -->
-                        <span class="ml-3 font-bold" [ngClass]="color === 'light' ? 'text-blueGray-600' : 'text-white'">
+                        <span class="ml-3 font-bold" [ngClass]="color === 'light' ? 'text-slate-600' : 'text-white'">
               {{poc.pocId}}
             </span>
                     </th>
@@ -74,10 +74,10 @@
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                         <!-- <div class="flex">
-                            <img src="assets/img/team-1-800x800.jpg" alt="..." class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow" />
-                            <img src="assets/img/team-2-800x800.jpg" alt="..." class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4" />
-                            <img src="assets/img/team-3-800x800.jpg" alt="..." class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4" />
-                            <img src="assets/img/team-4-470x470.png" alt="..." class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4" />
+                            <img src="assets/img/team-1-800x800.jpg" alt="..." class="w-10 h-10 rounded-full border-2 border-slate-50 shadow" />
+                            <img src="assets/img/team-2-800x800.jpg" alt="..." class="w-10 h-10 rounded-full border-2 border-slate-50 shadow -ml-4" />
+                            <img src="assets/img/team-3-800x800.jpg" alt="..." class="w-10 h-10 rounded-full border-2 border-slate-50 shadow -ml-4" />
+                            <img src="assets/img/team-4-470x470.png" alt="..." class="w-10 h-10 rounded-full border-2 border-slate-50 shadow -ml-4" />
                         </div> -->
                         {{poc.direction}} - {{poc.city}}
                     </td>
