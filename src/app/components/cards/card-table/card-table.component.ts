@@ -1,7 +1,10 @@
-import { Component, OnInit, Input, AfterViewInit } from "@angular/core";
+import { Component, OnInit, Input, ViewChild, Inject } from "@angular/core";
 import { ApiService } from "../../../services/api.service";
-// import { MatPaginator } from "@angular/material/paginator";
-// import { MatTableDataSource } from "@angular/material/table";
+// import { CardModalComponent } from "../card-modal/card-modal.component";
+// import { MdbModalRef, MdbModalService } from "mdb-angular-ui-kit/modal";
+import { MatPaginator } from "@angular/material/paginator";
+import { MatTableDataSource } from "@angular/material/table";
+// import { MatDialog, MAT_DIALOG_DATA } from "@angular/material/dialog";
 
 export interface Pocs {
   city: string;
@@ -14,15 +17,18 @@ export interface Pocs {
   pocPayphone: string;
   tchatId: string;
   working: boolean;
-  workPercentage: string;
+  // workPercentage: string;
 }
 @Component({
   selector: "app-card-table",
   templateUrl: "./card-table.component.html",
 })
-export class CardTableComponent implements OnInit, AfterViewInit {
+export class CardTableComponent implements OnInit {
   private _color: string = "light";
-  displayedColumns: string[] = ["position", "name", "weight", "symbol"];
+  pocs: any;
+  dataSource: any;
+  displayedColumns: string[];
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   @Input()
   get color(): string {
@@ -35,13 +41,27 @@ export class CardTableComponent implements OnInit, AfterViewInit {
 
   constructor(private service: ApiService) {}
 
-  pocs: any;
-
   ngOnInit(): void {
     this.service.getPocs().subscribe((response) => {
       this.pocs = response;
+      this.displayedColumns = [
+        "Poc ID",
+        "Name",
+        "Phone",
+        "Direction",
+        "Options",
+      ];
+      this.dataSource = new MatTableDataSource<any>(this.pocs);
+      this.dataSource.paginator = this.paginator;
+      console.log(this.dataSource);
     });
   }
 
-  ngAfterViewInit() {}
+  // openDialog() {
+  //   const dialogRef = this.dialog.open(DialogContentExampleDialog);
+
+  //   dialogRef.afterClosed().subscribe((result) => {
+  //     console.log(`Dialog result: ${result}`);
+  //   });
+  // }
 }
