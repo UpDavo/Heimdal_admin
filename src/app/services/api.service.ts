@@ -5,7 +5,7 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root",
 })
 export class ApiService {
-  private url = "http://localhost:3000/api/pocs?quantity=all";
+  private url = "https://heimdalec-ws2.herokuapp.com/api/pocs?quantity=all";
 
   constructor(private httpClient: HttpClient) {}
 
