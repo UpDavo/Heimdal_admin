@@ -18,7 +18,7 @@ export class HeaderStatsComponent implements OnInit {
     const tempDate = new Date();
     const tempYear = tempDate.getFullYear();
     const tempMonth = tempDate.getMonth() + 1;
-    const tempDay = tempDate.getDate() + 1;
+    const tempDay = tempDate.getDate();
     this.service
       .getClients(tempMonth.toString(), tempYear.toString())
       .subscribe((response: Array<any>) => {
@@ -28,7 +28,7 @@ export class HeaderStatsComponent implements OnInit {
             client.today_orders_card + client.today_orders_cash;
           this.montly_links += client.today_payment_links;
           this.montly_telegram += client.today_telegram_messages;
-          if (client.day == tempDay) {
+          if (client.day == tempDay.toString()) {
             this.today_sessions = client.today_sessions;
             this.today_telegram = client.today_telegram_messages;
           }
