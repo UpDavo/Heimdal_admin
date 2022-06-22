@@ -2,6 +2,198 @@
     "type": "FeatureCollection",
     "features": [{
             "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "circle",
+                "sector": "Calderón",
+                "ciudad": "Quito",
+                "nombre": "FC Calderon",
+                "show_on_map": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-78.44774627685547, -0.08834140002727509]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "circle",
+                "sector": "Condado",
+                "ciudad": "Quito",
+                "nombre": "Depósito Fernanda",
+                "show_on_map": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-78.49594116210938, -0.11535636737818807]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "circle",
+                "sector": "Monteserrin",
+                "ciudad": "Quito",
+                "nombre": "Ninja Licores",
+                "show_on_map": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-78.46640014648438, -0.15809282660484314]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "circle",
+                "sector": "La Gasca",
+                "ciudad": "Quito",
+                "nombre": "FC Gasca",
+                "show_on_map": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-78.50875, -0.195268]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "circle",
+                "sector": "Mariscal",
+                "ciudad": "Quito",
+                "nombre": "Urban Mariscal",
+                "show_on_map": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-78.48812520503998, -0.20320104678565248]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "circle",
+                "sector": "Cumbaya",
+                "ciudad": "Quito",
+                "nombre": "FC Cumbayá",
+                "show_on_map": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-78.4625473022461, -0.2117566019296646]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "circle",
+                "sector": "Tumbaco",
+                "ciudad": "Quito",
+                "nombre": "Friendzone",
+                "show_on_map": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-78.39692687988281, -0.2210066020488739]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "circle",
+                "sector": "Villaflora",
+                "ciudad": "Quito",
+                "nombre": "Minimarket Rous",
+                "show_on_map": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-78.5279874, -0.2409931]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "circle",
+                "sector": "Quitumbe",
+                "ciudad": "Quito",
+                "nombre": "El Favorito",
+                "show_on_map": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-78.5467163, -0.2997297]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "circle",
+                "sector": "Sangolqui",
+                "ciudad": "Quito",
+                "nombre": "Distri Licord",
+                "show_on_map": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-78.4471102, -0.3332644]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "circle",
+                "sector": "Conocoto",
+                "ciudad": "Quito",
+                "nombre": "Beer House",
+                "show_on_map": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-78.4760037, -0.2926022]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "marker-color": "#7e7e7e",
+                "marker-size": "medium",
+                "marker-symbol": "circle",
+                "sector": "Pomasqui",
+                "ciudad": "Quito",
+                "nombre": "Licorería de Cebita",
+                "show_on_map": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-78.4549038, -0.0541785]
+            }
+        },
+        {
+            "type": "Feature",
             "properties": {},
             "geometry": {
                 "type": "Polygon",

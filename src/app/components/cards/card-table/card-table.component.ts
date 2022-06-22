@@ -1,10 +1,9 @@
 import { Component, OnInit, Input, ViewChild, Inject } from "@angular/core";
 import { ApiService } from "../../../services/api.service";
-// import { CardModalComponent } from "../card-modal/card-modal.component";
-// import { MdbModalRef, MdbModalService } from "mdb-angular-ui-kit/modal";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatTableDataSource } from "@angular/material/table";
-// import { MatDialog, MAT_DIALOG_DATA } from "@angular/material/dialog";
+import { CardModalComponent } from "../../cards/card-modal/card-modal.component";
+import { MatDialog } from "@angular/material/dialog";
 
 export interface Pocs {
   city: string;
@@ -39,7 +38,7 @@ export class CardTableComponent implements OnInit {
     this._color = color !== "light" && color !== "dark" ? "light" : color;
   }
 
-  constructor(private service: ApiService) {}
+  constructor(private service: ApiService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.service.getPocs().subscribe((response) => {
@@ -57,11 +56,12 @@ export class CardTableComponent implements OnInit {
     });
   }
 
-  // openDialog() {
-  //   const dialogRef = this.dialog.open(DialogContentExampleDialog);
-
-  //   dialogRef.afterClosed().subscribe((result) => {
-  //     console.log(`Dialog result: ${result}`);
-  //   });
-  // }
+  createPoc() {
+    this.dialog.open(CardModalComponent, {
+      disableClose: false,
+      data: {
+        update: false,
+      },
+    });
+  }
 }

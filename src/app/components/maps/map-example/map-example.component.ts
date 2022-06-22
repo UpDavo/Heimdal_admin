@@ -54,7 +54,17 @@ export class MapExampleComponent implements AfterViewInit {
         return feature.properties.style;
       },
       onEachFeature: function (feature, layer) {
-        layer.bindPopup(feature.properties.name);
+        if (feature.geometry.type == "Point") {
+          layer.bindPopup(
+            "<b>" +
+              feature.properties.sector +
+              " - " +
+              feature.properties.ciudad +
+              "</b>" +
+              "<br>" +
+              feature.properties.nombre
+          );
+        }
       },
     });
     myLayer.addTo(this.map);

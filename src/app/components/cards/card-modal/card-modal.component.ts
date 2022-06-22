@@ -1,5 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Inject } from "@angular/core";
 import { NgForm } from "@angular/forms";
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
+import { ApiService } from "../../../services/api.service";
 
 @Component({
   selector: "app-card-modal",
@@ -7,12 +9,34 @@ import { NgForm } from "@angular/forms";
   styleUrls: ["./bootstrap.min.css"],
 })
 export class CardModalComponent implements OnInit {
-  constructor() {}
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    public dialogRef: MatDialogRef<CardModalComponent>,
+    private service: ApiService
+  ) {}
 
   ngOnInit(): void {}
 
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
   onSubmit(f: NgForm) {
-    console.log(f.value); // { first: '', last: '' }
-    console.log(f.valid); // false
+    const send_data = {
+      city: f.value.city,
+      groupId: f.value.pocGroupId,
+      name: f.value.name,
+      pocId: f.value.pocId,
+      direction: f.value.direction,
+      phone: f.value.phone,
+      pocPayphone: f.value.pocPayphone,
+      lastEdit: new Date(),
+      tchatId: f.value.tchatId,
+      working: true,
+    };
+
+    this.service.setPoc(send_data).subscribe(() => {
+      this.dialogRef.close();
+    });
   }
 }

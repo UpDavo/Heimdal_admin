@@ -64,7 +64,7 @@
                 </li>
 
                 <li class="items-center">
-                    <a [routerLink]="['/admin/tables']" class="text-xs uppercase py-3 font-bold block" routerLinkActive #adminTables="routerLinkActive" [ngClass]="
+                    <a [routerLink]="['/admin/pocs']" class="text-xs uppercase py-3 font-bold block" routerLinkActive #adminTables="routerLinkActive" [ngClass]="
               adminTables.isActive
                 ? 'text-indigo-600 hover:text-indigo-700'
                 : 'text-slate-700 hover:text-slate-500'
@@ -72,18 +72,6 @@
                         <i class="fas fa-table mr-2 text-sm" [ngClass]="
                 adminTables.isActive ? 'opacity-75' : 'text-slate-300'
               "></i> Pocs
-                    </a>
-                </li>
-
-                <li class="items-center">
-                    <a [routerLink]="['/admin/maps']" class="text-xs uppercase py-3 font-bold block" routerLinkActive #adminMaps="routerLinkActive" [ngClass]="
-              adminMaps.isActive
-                ? 'text-indigo-600 hover:text-indigo-700'
-                : 'text-slate-700 hover:text-slate-500'
-            ">
-                        <i class="fas fa-map-marked mr-2 text-sm" [ngClass]="
-                adminMaps.isActive ? 'opacity-75' : 'text-slate-300'
-              "></i> Poc Map
                     </a>
                 </li>
             </ul>
