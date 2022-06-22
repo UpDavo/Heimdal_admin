@@ -60,7 +60,7 @@
                   ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
                   : 'bg-indigo-800 text-indigo-300 border-indigo-700'
               " mat-header-cell *matHeaderCellDef> Options </th>
-                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center" mat-cell *matCellDef="let element">
+                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center" mat-cell *matCellDef="let element" align="left">
                     <app-table-dropdown pocId="{{element.pocId}}" name="{{element.name}}" phone="{{element.phone}}" direction="{{element.direction}}" pocPayphone="{{element.pocPayphone}}" groupId="{{element.groupId}}" city="{{element.city}}" tchatId="{{element.tchatId}}"></app-table-dropdown>
                 </td>
             </ng-container>

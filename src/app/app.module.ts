@@ -11,6 +11,7 @@ import { AuthComponent } from "./layouts/auth/auth.component";
 // admin views
 import { DashboardComponent } from "./views/admin/dashboard/dashboard.component";
 import { MapsComponent } from "./views/admin/maps/maps.component";
+import { ChatComponent } from "./views/admin/chat/chat.component";
 import { SettingsComponent } from "./views/admin/settings/settings.component";
 import { TablesComponent } from "./views/admin/tables/tables.component";
 
@@ -85,6 +86,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     AdminComponent,
     AuthComponent,
     MapsComponent,
+    ChatComponent,
     SettingsComponent,
     TablesComponent,
     LoginComponent,

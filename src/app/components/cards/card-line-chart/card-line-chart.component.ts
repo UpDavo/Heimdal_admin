@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import Chart from "chart.js";
 
 @Component({
@@ -6,6 +6,11 @@ import Chart from "chart.js";
   templateUrl: "./card-line-chart.component.html",
 })
 export class CardLineChartComponent implements OnInit {
+  @Input() montly_sessions;
+  @Input() today_sessions;
+  @Input() montly_orders;
+  @Input() montly_links;
+
   constructor() {}
 
   ngOnInit() {}

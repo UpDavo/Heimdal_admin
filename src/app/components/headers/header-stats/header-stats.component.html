@@ -4,18 +4,25 @@
         <div>
             <!-- Card stats -->
             <div class="flex flex-wrap">
-                <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
-                    <app-card-stats statSubtitle="Monthly Started Session" statTitle="350,897" statArrow="up" statPercent="3.48" statPercentColor="text-emerald-500" statDescripiron="Since last month" statIconName="far fa-chart-bar" statIconColor="bg-red-500"></app-card-stats>
+                <div class="mt-3 w-full lg:w-6/12 xl:w-3/12 px-4">
+                    <app-card-stats statSubtitle="M:WhatsApp Session" statTitle="{{montly_sessions}}" statArrow="up" statPercent="3.48" statPercentColor="text-emerald-500" statDescripiron="Since last month" statIconName="fab fa-whatsapp" statIconColor="bg-emerald-500"></app-card-stats>
                 </div>
-                <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
-                    <app-card-stats statSubtitle="Today Started Sessions" statTitle="2,356" statArrow="down" statPercent="3.48" statPercentColor="text-red-500" statDescripiron="Since last week" statIconName="fas fa-chart-pie" statIconColor="bg-orange-500"></app-card-stats>
+                <div class="mt-3 w-full lg:w-6/12 xl:w-3/12 px-4">
+                    <app-card-stats statSubtitle="T:WhatsApp Sessions" statTitle="{{today_sessions}}" statArrow="down" statPercent="3.48" statPercentColor="text-red-500" statDescripiron="Since last week" statIconName="fab fa-whatsapp" statIconColor="bg-emerald-500"></app-card-stats>
                 </div>
-                <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
-                    <app-card-stats statSubtitle="Monthly Total Orders" statTitle="924" statArrow="down" statPercent="1.10" statPercentColor="text-orange-500" statDescripiron="Since yesterday" statIconName="fas fa-users" statIconColor="bg-pink-500"></app-card-stats>
+                <div class="mt-3 w-full lg:w-6/12 xl:w-3/12 px-4">
+                    <app-card-stats statSubtitle="M:Telegram MSG" statTitle="{{montly_telegram}}" statArrow="up" statPercent="12" statPercentColor="text-emerald-500" statDescripiron="Since last month" statIconName="fab fa-telegram-plane" statIconColor="bg-sky-500"></app-card-stats>
                 </div>
-                <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
-                    <app-card-stats statSubtitle="Monthly Payment Links" statTitle="49,65%" statArrow="up" statPercent="12" statPercentColor="text-emerald-500" statDescripiron="Since last month" statIconName="fas fa-percent" statIconColor="bg-emerald-500"></app-card-stats>
+                <div class="mt-3 w-full lg:w-6/12 xl:w-3/12 px-4">
+                    <app-card-stats statSubtitle="T:Telegram MSG" statTitle="{{today_telegram}}" statArrow="up" statPercent="12" statPercentColor="text-emerald-500" statDescripiron="Since last month" statIconName="fab fa-telegram-plane" statIconColor="bg-sky-500"></app-card-stats>
                 </div>
+                <div class="mt-3 w-full lg:w-6/12 xl:w-6/12 px-4">
+                    <app-card-stats statSubtitle="M:Total Orders" statTitle="{{montly_orders}}" statArrow="down" statPercent="1.10" statPercentColor="text-orange-500" statDescripiron="Since yesterday" statIconName="fas fa-users" statIconColor="bg-yellow-500"></app-card-stats>
+                </div>
+                <div class="mt-3 w-full lg:w-6/12 xl:w-6/12 px-4">
+                    <app-card-stats statSubtitle="M:Payment Links" statTitle="{{montly_links}}" statArrow="up" statPercent="12" statPercentColor="text-emerald-500" statDescripiron="Since last month" statIconName="fas fa-link" statIconColor="bg-pink-500"></app-card-stats>
+                </div>
+
             </div>
         </div>
     </div>

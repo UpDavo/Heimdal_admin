@@ -17,6 +17,7 @@ import { RegisterComponent } from "./views/auth/register/register.component";
 import { IndexComponent } from "./views/index/index.component";
 import { LandingComponent } from "./views/landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
+import { ChatComponent } from "./views/admin/chat/chat.component";
 
 const routes: Routes = [
   // admin views
@@ -26,6 +27,7 @@ const routes: Routes = [
     children: [
       { path: "dashboard", component: DashboardComponent },
       { path: "pocs", component: TablesComponent },
+      { path: "chat", component: ChatComponent },
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ],
   },

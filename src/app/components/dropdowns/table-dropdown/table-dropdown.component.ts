@@ -8,6 +8,9 @@ import {
 import { createPopper } from "@popperjs/core";
 import { MatDialog } from "@angular/material/dialog";
 import { CardModalComponent } from "../../cards/card-modal/card-modal.component";
+import { ApiService } from "../../../services/api.service";
+import { DataService } from "../../../services/data.service";
+import Swal from "sweetalert2";
 @Component({
   selector: "app-table-dropdown",
   templateUrl: "./table-dropdown.component.html",
@@ -22,7 +25,11 @@ export class TableDropdownComponent implements AfterViewInit {
   @Input() pocPayphone: any;
   @Input() tchatId: any;
   @Input() working: any;
-  constructor(public dialog: MatDialog) {}
+  constructor(
+    public dialog: MatDialog,
+    public apiService: ApiService,
+    private dataService: DataService
+  ) {}
 
   dropdownPopoverShow = false;
   @ViewChild("btnDropdownRef", { static: false }) btnDropdownRef: ElementRef;
@@ -63,5 +70,26 @@ export class TableDropdownComponent implements AfterViewInit {
     });
   }
 
-  deletePoc() {}
+  deletePoc() {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.apiService.deletePoc(this.pocId).subscribe(() => {
+          Swal.fire("Deleted!", "Your file has been deleted.", "success");
+          this.notifyForChange();
+        });
+      }
+    });
+  }
+
+  notifyForChange() {
+    this.dataService.notifyAboutChange();
+  }
 }

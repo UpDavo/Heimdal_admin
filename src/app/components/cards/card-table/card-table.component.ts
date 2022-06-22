@@ -1,9 +1,11 @@
-import { Component, OnInit, Input, ViewChild, Inject } from "@angular/core";
+import { Component, OnInit, Input, ViewChild, OnDestroy } from "@angular/core";
 import { ApiService } from "../../../services/api.service";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatTableDataSource } from "@angular/material/table";
 import { CardModalComponent } from "../../cards/card-modal/card-modal.component";
 import { MatDialog } from "@angular/material/dialog";
+import { Subscription } from "rxjs";
+import { DataService } from "../../../services/data.service";
 
 export interface Pocs {
   city: string;
@@ -22,12 +24,33 @@ export interface Pocs {
   selector: "app-card-table",
   templateUrl: "./card-table.component.html",
 })
-export class CardTableComponent implements OnInit {
+export class CardTableComponent implements OnInit, OnDestroy {
+  constructor(
+    private service: ApiService,
+    public dialog: MatDialog,
+    private dataService: DataService
+  ) {}
+
   private _color: string = "light";
   pocs: any;
   dataSource: any;
   displayedColumns: string[];
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  notifierSubscription: Subscription =
+    this.dataService.subjectNotifier.subscribe((notified) => {
+      this.service.getPocs().subscribe((response) => {
+        this.pocs = response;
+        this.displayedColumns = [
+          "Poc ID",
+          "Name",
+          "Phone",
+          "Direction",
+          "Options",
+        ];
+        this.dataSource = new MatTableDataSource<any>(this.pocs);
+        this.dataSource.paginator = this.paginator;
+      });
+    });
 
   @Input()
   get color(): string {
@@ -37,8 +60,6 @@ export class CardTableComponent implements OnInit {
   set color(color: string) {
     this._color = color !== "light" && color !== "dark" ? "light" : color;
   }
-
-  constructor(private service: ApiService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.service.getPocs().subscribe((response) => {
@@ -52,8 +73,11 @@ export class CardTableComponent implements OnInit {
       ];
       this.dataSource = new MatTableDataSource<any>(this.pocs);
       this.dataSource.paginator = this.paginator;
-      console.log(this.dataSource);
     });
+  }
+
+  ngOnDestroy() {
+    this.notifierSubscription.unsubscribe();
   }
 
   createPoc() {
