@@ -10,11 +10,8 @@ export class CardLineChartComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-    console.log(this.sales);
-  }
+  ngOnInit() {}
   ngAfterViewInit() {
-    console.log(this.sales);
     const now = new Date();
     const current_days = this.getAllDaysInMonth(
       now.getFullYear(),

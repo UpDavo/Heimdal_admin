@@ -2,7 +2,7 @@
     <div class="rounded-t mb-0 px-4 py-3 border-0">
         <div class="flex flex-wrap items-center">
             <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-                <h3 class="font-semibold text-base text-slate-700">Page visits</h3>
+                <h3 class="font-semibold text-base text-slate-700">Money Value</h3>
             </div>
             <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                 <button class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
@@ -17,88 +17,88 @@
             <thead>
                 <tr>
                     <th class="px-6 bg-slate-50 text-slate-500 align-middle border border-solid border-slate-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                        Page name .
+                        Item
                     </th>
                     <th class="px-6 bg-slate-50 text-slate-500 align-middle border border-solid border-slate-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                        Visitors
+                        Quantity
                     </th>
                     <th class="px-6 bg-slate-50 text-slate-500 align-middle border border-solid border-slate-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                        Unique users
+                        Value
                     </th>
                     <th class="px-6 bg-slate-50 text-slate-500 align-middle border border-solid border-slate-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                        Bounce rate
+                        Value x Quenatity
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        /argon/
+                        Telegram Monthly
                     </th>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        4,569
+                        {{montly_telegram}}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        340
+                        {{telegram_value}}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        <i class="fas fa-arrow-up text-emerald-500 mr-4"></i> 46,53%
+                        <i class="fas fa-arrow-up text-emerald-500 mr-4"></i> $ {{montly_telegram * telegram_value}}
                     </td>
                 </tr>
                 <tr>
                     <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        /argon/index.html
+                        Telegram Daily
                     </th>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        3,985
+                        {{today_telegram}}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        319
+                        {{telegram_value}}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        <i class="fas fa-arrow-down text-orange-500 mr-4"></i> 46,53%
+                        <i class="fas fa-arrow-up text-emerald-500 mr-4"></i> $ {{today_telegram * telegram_value}}
                     </td>
                 </tr>
                 <tr>
                     <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        /argon/charts.html
+                        WhatsApp Monthly
                     </th>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        3,513
+                        {{montly_sessions}}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        294
+                        {{whatsapp_value}}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        <i class="fas fa-arrow-down text-orange-500 mr-4"></i> 36,49%
+                        <i class="fas fa-arrow-up text-emerald-500 mr-4"></i> $ {{montly_sessions * whatsapp_value}}
                     </td>
                 </tr>
                 <tr>
                     <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        /argon/tables.html
+                        WhatsApp Daily
                     </th>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        2,050
+                        {{today_sessions}}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        147
+                        {{whatsapp_value}}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        <i class="fas fa-arrow-up text-emerald-500 mr-4"></i> 50,87%
+                        <i class="fas fa-arrow-up text-emerald-500 mr-4"></i> $ {{today_sessions * whatsapp_value}}
                     </td>
                 </tr>
                 <tr>
                     <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        /argon/profile.html
+                        Total Monthly
                     </th>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        1,795
+                        {{montly_sessions + montly_telegram}}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        190
+                        {{telegram_value}}/{{whatsapp_value}}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        <i class="fas fa-arrow-down text-indigo-500 mr-4"></i> 46,53%
+                        <i class="fas fa-arrow-up text-emerald-500 mr-4"></i> $ {{(montly_sessions * whatsapp_value) + (montly_telegram * telegram_value)}}
                     </td>
                 </tr>
             </tbody>
