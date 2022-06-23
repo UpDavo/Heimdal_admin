@@ -26,7 +26,7 @@
                 <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4" mat-cell *matCellDef="let element"> {{element.pocId}} </td>
             </ng-container>
             <!-- Position Column -->
-            <ng-container matColumnDef="Name">
+            <ng-container *ngIf="!isMobile" matColumnDef="Name">
                 <th class="px-6 bg-slate-50 text-slate-500 align-middle border border-solid border-slate-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left" [ngClass]="
                 color === 'light'
                   ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
@@ -59,8 +59,8 @@
                 color === 'light'
                   ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
                   : 'bg-indigo-800 text-indigo-300 border-indigo-700'
-              " mat-header-cell *matHeaderCellDef> Options </th>
-                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center" mat-cell *matCellDef="let element" align="left">
+              " mat-header-cell *matHeaderCellDef> OPT </th>
+                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left" mat-cell *matCellDef="let element" align="left">
                     <app-table-dropdown pocId="{{element.pocId}}" name="{{element.name}}" phone="{{element.phone}}" direction="{{element.direction}}" pocPayphone="{{element.pocPayphone}}" groupId="{{element.groupId}}" city="{{element.city}}" tchatId="{{element.tchatId}}"></app-table-dropdown>
                 </td>
             </ng-container>

@@ -1,7 +1,24 @@
 <!-- Header -->
 <div class="relative bg-indigo-500 md:pt-32 pb-32 pt-12">
     <div class="px-4 md:px-10 mx-auto w-full">
-        <div>
+        <div class="mb-3">
+            <div class="flex flex-wrap items-center">
+                <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+                    <h3 class="font-semibold text-base text-white">
+                        Messages Resume
+                    </h3>
+                </div>
+                <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
+                    <button mat-button (click)="updateComponent()" class="bg-sky-500 text-white active:bg-sky-500 font-bold text-xs uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+              Update Metrics
+            </button>
+                    <button mat-button (click)="hideComponent()" class="bg-sky-500 text-white active:bg-sky-500 font-bold text-xs uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+                Hide Metrics
+              </button>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="shown">
             <!-- Card stats -->
             <div class="flex flex-wrap">
                 <div class="mt-3 w-full lg:w-6/12 xl:w-3/12 px-4">

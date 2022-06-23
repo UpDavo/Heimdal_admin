@@ -14,9 +14,7 @@ import { LoginComponent } from "./views/auth/login/login.component";
 import { RegisterComponent } from "./views/auth/register/register.component";
 
 // no layouts views
-import { IndexComponent } from "./views/index/index.component";
 import { LandingComponent } from "./views/landing/landing.component";
-import { ProfileComponent } from "./views/profile/profile.component";
 import { ChatComponent } from "./views/admin/chat/chat.component";
 
 const routes: Routes = [
@@ -42,9 +40,7 @@ const routes: Routes = [
     ],
   },
   // no layout views
-  { path: "profile", component: ProfileComponent },
-  { path: "landing", component: LandingComponent },
-  { path: "", component: IndexComponent },
+  { path: "", component: LandingComponent },
   { path: "**", redirectTo: "", pathMatch: "full" },
 ];
 

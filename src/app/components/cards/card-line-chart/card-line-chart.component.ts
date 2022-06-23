@@ -6,41 +6,52 @@ import Chart from "chart.js";
   templateUrl: "./card-line-chart.component.html",
 })
 export class CardLineChartComponent implements OnInit {
-  @Input() montly_sessions;
-  @Input() today_sessions;
-  @Input() montly_orders;
-  @Input() montly_links;
+  @Input() sales;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.sales);
+  }
   ngAfterViewInit() {
+    console.log(this.sales);
+    const now = new Date();
+    const current_days = this.getAllDaysInMonth(
+      now.getFullYear(),
+      now.getMonth()
+    );
+    let card_array: any[] = [];
+    let cash_array: any[] = [];
+
+    current_days.forEach((day) => {
+      let data = this.sales.find((o) => o.day == day.toString());
+      if (data !== undefined) {
+        card_array.push(data.today_orders_card);
+        cash_array.push(data.today_orders_cash);
+      } else {
+        card_array.push(0);
+        cash_array.push(0);
+      }
+    });
+
     var config = {
       type: "line",
       data: {
-        labels: [
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July",
-        ],
+        labels: current_days,
         datasets: [
           {
-            label: new Date().getFullYear(),
+            label: "Credit Card",
             backgroundColor: "#4c51bf",
             borderColor: "#4c51bf",
-            data: [65, 78, 66, 44, 56, 67, 75],
+            data: card_array,
             fill: false,
           },
           {
-            label: new Date().getFullYear() - 1,
+            label: "Cash",
             fill: false,
             backgroundColor: "#fff",
             borderColor: "#fff",
-            data: [40, 68, 86, 74, 56, 60, 87],
+            data: cash_array,
           },
         ],
       },
@@ -118,5 +129,18 @@ export class CardLineChartComponent implements OnInit {
     let ctx: any = document.getElementById("line-chart") as HTMLCanvasElement;
     ctx = ctx.getContext("2d");
     new Chart(ctx, config);
+  }
+
+  getAllDaysInMonth(year, month) {
+    const date = new Date(year, month, 1);
+
+    const dates = [];
+
+    while (date.getMonth() === month) {
+      dates.push(date.getDate());
+      date.setDate(date.getDate() + 1);
+    }
+
+    return dates;
   }
 }

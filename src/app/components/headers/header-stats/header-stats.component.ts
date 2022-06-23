@@ -6,12 +6,13 @@ import { ApiService } from "../../../services/api.service";
   templateUrl: "./header-stats.component.html",
 })
 export class HeaderStatsComponent implements OnInit {
-  montly_sessions = 0;
-  today_sessions = 0;
-  today_telegram = 0;
-  montly_orders = 0;
-  montly_links = 0;
-  montly_telegram = 0;
+  montly_sessions;
+  today_sessions;
+  today_telegram;
+  montly_orders;
+  montly_links;
+  montly_telegram;
+  shown = true;
   constructor(private service: ApiService) {}
 
   ngOnInit(): void {
@@ -19,6 +20,13 @@ export class HeaderStatsComponent implements OnInit {
     const tempYear = tempDate.getFullYear();
     const tempMonth = tempDate.getMonth() + 1;
     const tempDay = tempDate.getDate();
+    this.montly_sessions = 0;
+    this.today_sessions = 0;
+    this.today_telegram = 0;
+    this.montly_orders = 0;
+    this.montly_links = 0;
+    this.montly_telegram = 0;
+
     this.service
       .getClients(tempMonth.toString(), tempYear.toString())
       .subscribe((response: Array<any>) => {
@@ -34,5 +42,16 @@ export class HeaderStatsComponent implements OnInit {
           }
         });
       });
+  }
+
+  updateComponent() {
+    this.ngOnInit();
+  }
+  hideComponent() {
+    if (this.shown) {
+      this.shown = false;
+    } else {
+      this.shown = true;
+    }
   }
 }

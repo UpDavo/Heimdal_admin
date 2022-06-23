@@ -6,10 +6,7 @@ import { ApiService } from "../../../services/api.service";
   templateUrl: "./dashboard.component.html",
 })
 export class DashboardComponent implements OnInit {
-  montly_sessions = 0;
-  today_sessions = 0;
-  montly_orders = 0;
-  montly_links = 0;
+  sales_data = [];
   constructor(private service: ApiService) {}
 
   ngOnInit() {
@@ -18,8 +15,13 @@ export class DashboardComponent implements OnInit {
     const tempMonth = tempDate.getMonth() + 1;
     this.service
       .getClients(tempMonth.toString(), tempYear.toString())
-      .subscribe((response: Array<any>) => {
-        response.forEach((client) => {});
+      .subscribe((response) => {
+        this.assignVariable(response);
       });
+  }
+
+  assignVariable(data) {
+    this.sales_data = data;
+    console.log(this.sales_data);
   }
 }
