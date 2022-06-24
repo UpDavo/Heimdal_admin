@@ -3,14 +3,18 @@
         <div class="flex flex-wrap items-center">
             <div class="relative w-full px-4 max-w-full flex-grow flex-1">
                 <h3 class="font-semibold text-base text-slate-700">
-                    Social traffic
+                    Payment Errors
                 </h3>
             </div>
-            <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
+            <!--
+
+<div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                 <button class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
           See all
         </button>
             </div>
+            -->
+
         </div>
     </div>
     <div class="block w-full overflow-x-auto">
@@ -19,10 +23,10 @@
             <thead class="thead-light">
                 <tr>
                     <th class="px-6 bg-slate-50 text-slate-500 align-middle border border-solid border-slate-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                        Referral
+                        Error
                     </th>
                     <th class="px-6 bg-slate-50 text-slate-500 align-middle border border-solid border-slate-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                        Visitors
+                        Monthly Quantity
                     </th>
                     <th class="px-6 bg-slate-50 text-slate-500 align-middle border border-solid border-slate-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px"></th>
                 </tr>
@@ -30,17 +34,17 @@
             <tbody>
                 <tr>
                     <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        Facebook
+                        Banco no aceptó la transacción
                     </th>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        1,480
+                        {{this.errors["Banco no aceptó la transacción"]}}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                         <div class="flex items-center">
-                            <span class="mr-2">60%</span>
+                            <span class="mr-2">{{percentages[0]}}%</span>
                             <div class="relative w-full">
                                 <div class="overflow-hidden h-2 text-xs flex rounded bg-red-200">
-                                    <div style="width: 60%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"></div>
+                                    <div [style.width]="percentages[0]+'%'" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"></div>
                                 </div>
                             </div>
                         </div>
@@ -48,17 +52,17 @@
                 </tr>
                 <tr>
                     <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        Facebook
+                        Cliente no respondió
                     </th>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        5,480
+                        {{this.errors["Cliente no respondió"]}}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                         <div class="flex items-center">
-                            <span class="mr-2">70%</span>
+                            <span class="mr-2">{{percentages[1]}}%</span>
                             <div class="relative w-full">
                                 <div class="overflow-hidden h-2 text-xs flex rounded bg-emerald-200">
-                                    <div style="width: 70%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500"></div>
+                                    <div [style.width]="percentages[1]+'%'" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500"></div>
                                 </div>
                             </div>
                         </div>
@@ -66,17 +70,17 @@
                 </tr>
                 <tr>
                     <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        Google
+                        Datos de tarjeta incorrectos
                     </th>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        4,807
+                        {{this.errors["Datos de tarjeta incorrectos"]}}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                         <div class="flex items-center">
-                            <span class="mr-2">80%</span>
+                            <span class="mr-2">{{percentages[2]}}%</span>
                             <div class="relative w-full">
                                 <div class="overflow-hidden h-2 text-xs flex rounded bg-purple-200">
-                                    <div style="width: 80%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-500"></div>
+                                    <div [style.width]="percentages[2]+'%'" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-500"></div>
                                 </div>
                             </div>
                         </div>
@@ -84,17 +88,17 @@
                 </tr>
                 <tr>
                     <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        Instagram
+                        Fondos Insuficientes
                     </th>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        3,678
+                        {{this.errors["Fondos Insuficientes"]}}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                         <div class="flex items-center">
-                            <span class="mr-2">75%</span>
+                            <span class="mr-2">{{percentages[3]}}%</span>
                             <div class="relative w-full">
                                 <div class="overflow-hidden h-2 text-xs flex rounded bg-sky-200">
-                                    <div style="width: 75%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-sky-500"></div>
+                                    <div [style.width]="percentages[3]+'%'" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-sky-500"></div>
                                 </div>
                             </div>
                         </div>
@@ -102,17 +106,53 @@
                 </tr>
                 <tr>
                     <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        twitter
+                        Pago no Validado
                     </th>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        2,645
+                        {{this.errors[ "No fue posible validar el pago, por favor vuelva a intentarlo con otros datos." ]}}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                         <div class="flex items-center">
-                            <span class="mr-2">30%</span>
+                            <span class="mr-2">{{percentages[4]}}%</span>
                             <div class="relative w-full">
                                 <div class="overflow-hidden h-2 text-xs flex rounded bg-orange-200">
-                                    <div style="width: 30%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-orange-500"></div>
+                                    <div [style.width]="percentages[4]+'%'" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-orange-500"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                        Tarjeta Inactiva
+                    </th>
+                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                        {{this.errors["Tarjeta temporalmente inactivada"] }}
+                    </td>
+                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                        <div class="flex items-center">
+                            <span class="mr-2">{{percentages[5]}}%</span>
+                            <div class="relative w-full">
+                                <div class="overflow-hidden h-2 text-xs flex rounded bg-orange-200">
+                                    <div [style.width]="percentages[5]+'%'" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-indigo-500"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                        Transacción Negada
+                    </th>
+                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                        {{this.errors["Transacción negada"] }}
+                    </td>
+                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                        <div class="flex items-center">
+                            <span class="mr-2">{{percentages[6]}}%</span>
+                            <div class="relative w-full">
+                                <div class="overflow-hidden h-2 text-xs flex rounded bg-orange-200">
+                                    <div [style.width]="percentages[6]+'%'" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500"></div>
                                 </div>
                             </div>
                         </div>
