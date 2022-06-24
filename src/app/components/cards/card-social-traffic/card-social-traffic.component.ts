@@ -14,6 +14,7 @@ export class CardSocialTrafficComponent implements OnInit {
     "No fue posible validar el pago, por favor vuelva a intentarlo con otros datos.": 0,
     "Tarjeta temporalmente inactivada": 0,
     "Transacción negada": 0,
+    other: 0,
   };
   percentages = [];
   constructor() {}
@@ -37,6 +38,7 @@ export class CardSocialTrafficComponent implements OnInit {
       this.errors["Tarjeta temporalmente inactivada"] +=
         client.errors["Tarjeta temporalmente inactivada"];
       this.errors["Transacción negada"] += client.errors["Transacción negada"];
+      this.errors["other"] += client.errors["other"];
     });
     this.percentages = this.getPercentages();
   }

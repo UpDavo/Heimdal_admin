@@ -158,6 +158,24 @@
                         </div>
                     </td>
                 </tr>
+                <tr>
+                    <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                        Otros
+                    </th>
+                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                        {{this.errors["other"] }}
+                    </td>
+                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                        <div class="flex items-center">
+                            <span class="mr-2">{{percentages[7]}}%</span>
+                            <div class="relative w-full">
+                                <div class="overflow-hidden h-2 text-xs flex rounded bg-orange-200">
+                                    <div [style.width]="percentages[7]+'%'" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
