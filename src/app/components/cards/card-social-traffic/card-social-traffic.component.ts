@@ -50,7 +50,7 @@ export class CardSocialTrafficComponent implements OnInit {
     }
     const sum = array.reduce((partialSum, a) => partialSum + a, 0);
     return array.map((a) => {
-      return (a * 100) / sum;
+      return ((a * 100) / sum).toFixed(2);
     });
   }
 }
