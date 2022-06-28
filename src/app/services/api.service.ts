@@ -7,6 +7,8 @@ import { HttpClient } from "@angular/common/http";
 export class ApiService {
   //private url = "http://localhost:3000";
   private url = "https://heimdalec-ws.herokuapp.com";
+  private heroku = "https://api.heroku.com/apps";
+  private app = "b76121b9-bc46-4783-9dfd-e149dbb073b9";
 
   constructor(private httpClient: HttpClient) {}
 
@@ -26,6 +28,29 @@ export class ApiService {
     return this.httpClient.get(
       this.url + "/api/clients?month=" + month + "&year=" + year
     );
+  }
+
+  restartDyno(dyno: any) {
+    return this.httpClient.delete(
+      this.heroku + "/" + this.app + "/dynos/" + dyno,
+      {
+        headers: {
+          Accept: "application/vnd.heroku+json; version=3",
+          Authorization: "Bearer ddf289d2-b659-4d00-a03f-afb1fbd1f49b",
+          "Content-Type": "application/json",
+        },
+      }
+    );
+  }
+
+  getDyno() {
+    return this.httpClient.get(this.heroku + "/" + this.app + "/dynos/", {
+      headers: {
+        Accept: "application/vnd.heroku+json; version=3",
+        Authorization: "Bearer ddf289d2-b659-4d00-a03f-afb1fbd1f49b",
+        "Content-Type": "application/json",
+      },
+    });
   }
 }
 

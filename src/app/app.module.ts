@@ -56,6 +56,9 @@ import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatDialogModule } from "@angular/material/dialog";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { AngularFireModule } from "@angular/fire/compat";
+import { environment } from "src/environments/environment";
+import { FirebaseService } from "./services/firebase.service";
 
 @NgModule({
   declarations: [
@@ -106,8 +109,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     MatTableModule,
     MatPaginatorModule,
     MatDialogModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

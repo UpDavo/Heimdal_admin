@@ -4,6 +4,15 @@
 
 export const environment = {
   production: false,
+  firebaseConfig: {
+    apiKey: "AIzaSyDotdPqO6o4bLQsaY-Kj-ycoY2n1pby7jk",
+    authDomain: "fiestacerca-ws.firebaseapp.com",
+    databaseURL: "https://fiestacerca-ws-default-rtdb.firebaseio.com",
+    projectId: "fiestacerca-ws",
+    storageBucket: "fiestacerca-ws.appspot.com",
+    messagingSenderId: "962640922621",
+    appId: "1:962640922621:web:b18da6318712e377047b94",
+  },
 };
 
 /*
