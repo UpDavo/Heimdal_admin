@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ApiService } from "../../../services/api.service";
-
+import Swal from "sweetalert2";
 @Component({
   selector: "app-header-stats",
   templateUrl: "./header-stats.component.html",
@@ -53,5 +53,29 @@ export class HeaderStatsComponent implements OnInit {
     } else {
       this.shown = true;
     }
+  }
+
+  restartDyno() {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "After this the server will restart",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, restart it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.service.getDyno().subscribe((response) => {
+          this.service.restartDyno(response[0].id).subscribe(() => {
+            Swal.fire(
+              "Restarted!",
+              "Your Dyno server has been restarted.",
+              "success"
+            );
+          });
+        });
+      }
+    });
   }
 }

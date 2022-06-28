@@ -1,4 +1,4 @@
-<a class="text-slate-500 block" href="#pablo" (click)="toggleDropdown($event)" #btnDropdownRef>
+<a class="text-slate-500 block" (click)="toggleDropdown($event)" #btnDropdownRef>
     <div class="items-center flex">
         <span class="w-12 h-12 text-sm text-white bg-slate-200 inline-flex items-center justify-center rounded-full">
       <img
@@ -11,7 +11,7 @@
 </a>
 <div class="min-w-48 z-50" #popoverDropdownRef>
     <div class="bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1 min-w-48" [ngClass]="dropdownPopoverShow ? 'block' : 'hidden'">
-        <a href="#pablo" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-slate-700">
+        <a class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-slate-700">
       Log Out
     </a>
     </div>

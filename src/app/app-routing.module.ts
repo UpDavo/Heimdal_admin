@@ -40,7 +40,7 @@ const routes: Routes = [
     ],
   },
   // no layout views
-  { path: "", component: LandingComponent },
+  { path: "", component: AdminComponent },
   { path: "**", redirectTo: "", pathMatch: "full" },
 ];
 
