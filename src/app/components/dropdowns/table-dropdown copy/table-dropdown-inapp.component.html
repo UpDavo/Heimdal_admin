@@ -1,0 +1,13 @@
+<a style="cursor:pointer" class="text-slate-500 block py-1 px-3" (click)="toggleDropdown($event)" #btnDropdownRef>
+    <i class="fas fa-ellipsis-v"></i>
+</a>
+<div class="min-w-48 z-50" #popoverDropdownRef align="center">
+    <div class="bg-white text-base float-left py-2 list-none text-left rounded shadow-lg mt-1 min-w-48" [ngClass]="dropdownPopoverShow ? 'block' : 'hidden'">
+        <button mat-button (click)="copyMessage(text_to_copy)" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-slate-700">
+      Copy Url
+        </button>
+        <button mat-button (click)="deleteInapp()" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-slate-700">
+      Delete
+        </button>
+    </div>
+</div>

@@ -1,6 +1,9 @@
 <div *ngIf="is_loaded">
     <div class="flex flex-wrap">
         <div class="w-full xl:w-12/12 mb-12 xl:mb-0 px-4">
+            <button class="bg-indigo-500 text-white active:bg-indigo-600 font-bold text-xs uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Select Date</button>
+        </div>
+        <div class="w-full xl:w-12/12 mb-12 xl:mb-0 px-4">
             <app-card-line-chart [sales]="sales_data"></app-card-line-chart>
         </div>
         <!-- <div class="w-full xl:w-4/12 px-4">

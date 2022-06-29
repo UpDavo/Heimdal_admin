@@ -86,6 +86,17 @@
               "></i> chat
                     </a>
                 </li>
+                <li class="items-center">
+                    <a [routerLink]="['/admin/inapp']" class="text-xs uppercase py-3 font-bold block" routerLinkActive #adminInapp="routerLinkActive" [ngClass]="
+              adminInapp.isActive
+                ? 'text-indigo-600 hover:text-indigo-700'
+                : 'text-slate-700 hover:text-slate-500'
+            ">
+                        <i class="fas fa-mobile-alt mr-2 text-sm" [ngClass]="
+                adminInapp.isActive ? 'opacity-75' : 'text-slate-300'
+              "></i> InApps
+                    </a>
+                </li>
             </ul>
 
         </div>

@@ -14,6 +14,7 @@ import { MapsComponent } from "./views/admin/maps/maps.component";
 import { ChatComponent } from "./views/admin/chat/chat.component";
 import { SettingsComponent } from "./views/admin/settings/settings.component";
 import { TablesComponent } from "./views/admin/tables/tables.component";
+import { InappComponent } from "./views/admin/inapp/inapp.component";
 
 // auth views
 import { LoginComponent } from "./views/auth/login/login.component";
@@ -36,6 +37,7 @@ import { CardSettingsComponent } from "./components/cards/card-settings/card-set
 import { CardSocialTrafficComponent } from "./components/cards/card-social-traffic/card-social-traffic.component";
 import { CardStatsComponent } from "./components/cards/card-stats/card-stats.component";
 import { CardTableComponent } from "./components/cards/card-table/card-table.component";
+import { CardTableInappComponent } from "./components/cards/card-table copy/card-table-inapp.component";
 import { FooterAdminComponent } from "./components/footers/footer-admin/footer-admin.component";
 import { FooterComponent } from "./components/footers/footer/footer.component";
 import { FooterSmallComponent } from "./components/footers/footer-small/footer-small.component";
@@ -44,6 +46,7 @@ import { IndexNavbarComponent } from "./components/navbars/index-navbar/index-na
 import { MapExampleComponent } from "./components/maps/map-example/map-example.component";
 import { IndexDropdownComponent } from "./components/dropdowns/index-dropdown/index-dropdown.component";
 import { TableDropdownComponent } from "./components/dropdowns/table-dropdown/table-dropdown.component";
+import { TableDropdownInappComponent } from "./components/dropdowns/table-dropdown copy/table-dropdown-inapp.component";
 import { PagesDropdownComponent } from "./components/dropdowns/pages-dropdown/pages-dropdown.component";
 import { NotificationDropdownComponent } from "./components/dropdowns/notification-dropdown/notification-dropdown.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
@@ -51,6 +54,7 @@ import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user
 
 import { HttpClientModule } from "@angular/common/http";
 import { CardModalComponent } from "./components/cards/card-modal/card-modal.component";
+import { CardModalInappComponent } from "./components/cards/card-modal copy/card-modal-inapp.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
@@ -81,6 +85,7 @@ import { FirebaseService } from "./services/firebase.service";
     CardSocialTrafficComponent,
     CardStatsComponent,
     CardTableComponent,
+    CardTableInappComponent,
     HeaderStatsComponent,
     MapExampleComponent,
     AuthNavbarComponent,
@@ -98,6 +103,9 @@ import { FirebaseService } from "./services/firebase.service";
     LandingComponent,
     ProfileComponent,
     CardModalComponent,
+    CardModalInappComponent,
+    InappComponent,
+    TableDropdownInappComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,40 @@
+<div *ngIf="data.update == true; then thenBlock else elseBlock">
+</div>
+<ng-template #thenBlock>
+    <h4 mat-dialog-title>Update InApp</h4>
+    <mat-dialog-content class="mat-typography">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate class="row g-3">
+            <div class="col-md-6 mt-2">
+                <label for="inappName" class="form-label">InApp Name</label>
+                <input type="text" name="inappName" [(ngModel)]="data.name" required class="form-control" id="inappName" readonly="readonly" />
+            </div>
+            <div class="col-md-6 mt-2">
+                <label for="inappUrl" class="form-label">InApp Url</label>
+                <input type="text" name="inappUrl" [(ngModel)]="data.url" required class="form-control" id="inappUrl" />
+            </div>
+            <div class="col-md-12 mt-3 mb-3">
+                <button class="btn btn-secondary" type="button" mat-button mat-dialog-close (click)="onNoClick()">Cancel</button>
+                <button type="submit" style="margin-left: 5px;" class="btn btn-success" value="submit" mat-button [mat-dialog-close]="true" cdkFocusInitial>Save</button>
+            </div>
+        </form>
+    </mat-dialog-content>
+</ng-template>
+<ng-template #elseBlock>
+    <h4 mat-dialog-title>Add InApp</h4>
+    <mat-dialog-content class="mat-typography">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate class="row g-3">
+            <div class="col-md-6 mt-2">
+                <label for="inappName" class="form-label">InApp Name</label>
+                <input type="text" name="inappName" ngModel required class="form-control" id="inappName" />
+            </div>
+            <div class="col-md-6 mt-2">
+                <label for="inappUrl" class="form-label">InApp URL</label>
+                <input type="text" name="inappUrl" ngModel required class="form-control" id="inappUrl" />
+            </div>
+            <div class="col-md-12 mt-3 mb-3">
+                <button class="btn btn-secondary" mat-button (click)="onNoClick()">Cancel</button>
+                <button type="submit" style="margin-left: 5px;" class="btn btn-success" value="submit" mat-button cdkFocusInitial>Save</button>
+            </div>
+        </form>
+    </mat-dialog-content>
+</ng-template>
