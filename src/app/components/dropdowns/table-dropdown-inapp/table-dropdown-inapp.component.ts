@@ -5,6 +5,7 @@ import {
   ElementRef,
   Input,
 } from "@angular/core";
+import { createPopper } from "@popperjs/core";
 import { MatDialog } from "@angular/material/dialog";
 import { ApiService } from "../../../services/api.service";
 import { DataService } from "../../../services/data.service";
@@ -27,7 +28,15 @@ export class TableDropdownInappComponent implements AfterViewInit {
   @ViewChild("btnDropdownRef", { static: false }) btnDropdownRef: ElementRef;
   @ViewChild("popoverDropdownRef", { static: false })
   popoverDropdownRef: ElementRef;
-  ngAfterViewInit() {}
+  ngAfterViewInit() {
+    createPopper(
+      this.btnDropdownRef.nativeElement,
+      this.popoverDropdownRef.nativeElement,
+      {
+        placement: "bottom-start",
+      }
+    );
+  }
 
   toggleDropdown(event) {
     event.preventDefault();
