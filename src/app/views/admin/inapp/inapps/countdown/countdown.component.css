@@ -39,12 +39,12 @@
 
 @font-face {
     font-family: "Bright";
-    src: local("Bright"), url(/fonts/Bright.ttf) format("truetype");
+    src: local("Bright"), url("/assets/fonts/Bright.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Monserrat";
-    src: local("Monserrat"), url(/fonts/Montserrat.ttf) format("truetype");
+    src: local("Monserrat"), url("/assets/fonts/Montserrat.ttf") format("truetype");
 }
 
 html {
@@ -795,8 +795,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .countdown {
-    padding-top: 1px;
-    padding-bottom: 60vh;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
     font-family: Bright;
     --tw-bg-opacity: 1;
     background-color: hsl(234 17% 12% / var(--tw-bg-opacity));
