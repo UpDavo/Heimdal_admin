@@ -63,6 +63,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AngularFireModule } from "@angular/fire/compat";
 import { environment } from "src/environments/environment";
 import { FirebaseService } from "./services/firebase.service";
+import { CardBotTrafficComponent } from "./components/cards/card-social-traffic copy/card-bot-traffic.component";
+import { CountdownViewComponent } from "./views/admin/inapp/inapps/countdown/countdown.component";
 
 @NgModule({
   declarations: [
@@ -106,6 +108,8 @@ import { FirebaseService } from "./services/firebase.service";
     CardModalInappComponent,
     InappComponent,
     TableDropdownInappComponent,
+    CardBotTrafficComponent,
+    CountdownViewComponent,
   ],
   imports: [
     BrowserModule,

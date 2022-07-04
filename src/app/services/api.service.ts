@@ -16,6 +16,12 @@ export class ApiService {
     return this.httpClient.get(this.url + "/api/pocs?quantity=all");
   }
 
+  getBots(month: string, year: string) {
+    return this.httpClient.get(
+      this.url + "/api/bot?month=" + month + "&year=" + year
+    );
+  }
+
   setPoc(object: any) {
     return this.httpClient.post(this.url + "/api/pocs", object);
   }

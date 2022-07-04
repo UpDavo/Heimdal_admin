@@ -9,14 +9,14 @@
                     </h3>
                 </div>
                 <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
-                    <button mat-button (click)="restartDyno()" class="bg-sky-500 text-white active:bg-sky-500 font-bold text-xs uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
-                        Restart Dyno
-                      </button>
-                    <button mat-button (click)="updateComponent()" class="bg-sky-500 text-white active:bg-sky-500 font-bold text-xs uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
-              Update Metrics
-            </button>
                     <button mat-button (click)="hideComponent()" class="bg-sky-500 text-white active:bg-sky-500 font-bold text-xs uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
                 {{shown ? "Hide Metrics" : "Show Metrics"}}
+              </button>
+                    <button mat-button (click)="updateComponent()" class="bg-emerald-500 text-white active:bg-emerald-500 font-bold text-xs uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+                Update Metrics
+              </button>
+                    <button mat-button (click)="restartDyno()" class="bg-red-500 text-white active:bg-sky-500 font-bold text-xs uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+                Restart Dyno
               </button>
                 </div>
             </div>

@@ -64,7 +64,21 @@
                 </tr>
                 <tr>
                     <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        WhatsApp Monthly
+                        WhatsApp Bot Monthly
+                    </th>
+                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                        {{whatsapp_bot_session}}
+                    </td>
+                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                        {{whatsapp_value}}
+                    </td>
+                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                        <i class="fas fa-arrow-up text-emerald-500 mr-4"></i> $ {{(whatsapp_bot_session * whatsapp_value).toFixed(2)}}
+                    </td>
+                </tr>
+                <tr>
+                    <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                        WhatsApp Link Monthly
                     </th>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                         {{montly_sessions}}
@@ -78,7 +92,7 @@
                 </tr>
                 <tr>
                     <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        WhatsApp Daily
+                        WhatsApp Link Daily
                     </th>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                         {{today_sessions}}
@@ -92,7 +106,7 @@
                 </tr>
                 <tr>
                     <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                        Total Monthly
+                        Total Monthly (WhatsApp + Telegram)
                     </th>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                         {{montly_sessions + montly_telegram}}
@@ -101,7 +115,7 @@
                         {{telegram_value}}/{{whatsapp_value}}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        <i class="fas fa-arrow-up text-emerald-500 mr-4"></i> $ {{((montly_sessions * whatsapp_value) + (montly_telegram * telegram_value)).toFixed(2)}}
+                        <i class="fas fa-arrow-up text-emerald-500 mr-4"></i> $ {{(((montly_sessions+whatsapp_bot_session) * whatsapp_value) + (montly_telegram * telegram_value)).toFixed(2)}}
                     </td>
                 </tr>
             </tbody>

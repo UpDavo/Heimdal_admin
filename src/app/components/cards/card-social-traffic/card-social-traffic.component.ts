@@ -16,7 +16,8 @@ export class CardSocialTrafficComponent implements OnInit {
     "Transacción negada": 0,
     other: 0,
   };
-  percentages = [];
+  percentages;
+  total_errors = 0;
   constructor() {}
 
   ngOnInit(): void {
@@ -49,8 +50,22 @@ export class CardSocialTrafficComponent implements OnInit {
       array.push(this.errors[property]);
     }
     const sum = array.reduce((partialSum, a) => partialSum + a, 0);
-    return array.map((a) => {
+    this.total_errors = sum;
+
+    const percentages = array.map((a) => {
       return ((a * 100) / sum).toFixed(2);
     });
+
+    return {
+      "Banco no aceptó la transacción": percentages[0],
+      "Cliente no respondió": percentages[1],
+      "Datos de tarjeta incorrectos": percentages[2],
+      "Fondos Insuficientes": percentages[3],
+      "No fue posible validar el pago, por favor vuelva a intentarlo con otros datos.":
+        percentages[4],
+      "Tarjeta temporalmente inactivada": percentages[5],
+      "Transacción negada": percentages[6],
+      other: percentages[7],
+    };
   }
 }

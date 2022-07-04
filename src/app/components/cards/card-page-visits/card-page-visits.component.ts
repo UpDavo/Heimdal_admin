@@ -1,11 +1,12 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { ApiService } from "../../../services/api.service";
 @Component({
   selector: "app-card-page-visits",
   templateUrl: "./card-page-visits.component.html",
 })
 export class CardPageVisitsComponent implements OnInit {
   @Input() sales: Array<any>;
+  @Input() sessions: Array<any>;
+
   montly_sessions;
   today_sessions;
   today_telegram;
@@ -15,7 +16,8 @@ export class CardPageVisitsComponent implements OnInit {
   telegram_value;
   whatsapp_value;
   shown = true;
-  constructor(private service: ApiService) {}
+  whatsapp_bot_session = 0;
+  constructor() {}
 
   ngOnInit(): void {
     const tempDate = new Date();
@@ -36,6 +38,10 @@ export class CardPageVisitsComponent implements OnInit {
         this.telegram_value = client.cost_per_telegram_message;
         this.whatsapp_value = client.cost_per_session;
       }
+    });
+
+    this.sessions.forEach((session) => {
+      this.whatsapp_bot_session += session.sesiones;
     });
   }
 }

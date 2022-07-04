@@ -50,6 +50,13 @@ export class TableDropdownInappComponent implements AfterViewInit {
     selBox.select();
     document.execCommand("copy");
     document.body.removeChild(selBox);
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Url has been copied",
+      showConfirmButton: false,
+      timer: 500,
+    });
   }
 
   deleteInapp() {
