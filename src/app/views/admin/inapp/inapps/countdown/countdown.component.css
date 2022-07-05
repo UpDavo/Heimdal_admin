@@ -688,12 +688,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .text-3xl {
-    font-size: 1.875rem;
+    font-size: 3.875rem;
     line-height: 2.25rem;
+    margin-top: 10px;
 }
 
 .text-xs {
-    font-size: 0.75rem;
+    font-size: 1.2rem;
     line-height: 1rem;
 }
 
@@ -806,4 +807,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     background-image: url("/assets/img/fondo_inapp.png");
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
+}
+
+.image_center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 10rem;
 }
