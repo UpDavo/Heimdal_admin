@@ -65,6 +65,7 @@ import { environment } from "src/environments/environment";
 import { FirebaseService } from "./services/firebase.service";
 import { CardBotTrafficComponent } from "./components/cards/card-social-traffic copy/card-bot-traffic.component";
 import { CountdownViewComponent } from "./views/admin/inapp/inapps/countdown/countdown.component";
+import { FogViewComponent } from "./views/admin/inapp/inapps/fog/fog.component";
 
 @NgModule({
   declarations: [
@@ -110,6 +111,7 @@ import { CountdownViewComponent } from "./views/admin/inapp/inapps/countdown/cou
     TableDropdownInappComponent,
     CardBotTrafficComponent,
     CountdownViewComponent,
+    FogViewComponent,
   ],
   imports: [
     BrowserModule,
