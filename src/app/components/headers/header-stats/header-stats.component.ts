@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ApiService } from "../../../services/api.service";
 import Swal from "sweetalert2";
+import { ActivatedRoute } from "@angular/router";
 @Component({
   selector: "app-header-stats",
   templateUrl: "./header-stats.component.html",
@@ -13,7 +14,7 @@ export class HeaderStatsComponent implements OnInit {
   montly_links;
   montly_telegram;
   shown = true;
-  constructor(private service: ApiService) {}
+  constructor(private service: ApiService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     const tempDate = new Date();
@@ -26,6 +27,7 @@ export class HeaderStatsComponent implements OnInit {
     this.montly_orders = 0;
     this.montly_links = 0;
     this.montly_telegram = 0;
+    this.shown = this.route.snapshot.paramMap.get("shown") === "true";
 
     this.service
       .getClients(tempMonth.toString(), tempYear.toString())
@@ -47,6 +49,7 @@ export class HeaderStatsComponent implements OnInit {
   updateComponent() {
     this.ngOnInit();
   }
+
   hideComponent() {
     if (this.shown) {
       this.shown = false;

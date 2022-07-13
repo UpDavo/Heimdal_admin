@@ -37,4 +37,6 @@ export class DashboardComponent implements OnInit {
     );
     return data;
   }
+
+  update() {}
 }

@@ -38,8 +38,8 @@ export class CardLineChartComponent implements OnInit {
         datasets: [
           {
             label: "Credit Card",
-            backgroundColor: "#4c51bf",
-            borderColor: "#4c51bf",
+            backgroundColor: "#4440db",
+            borderColor: "#4440db",
             data: card_array,
             fill: false,
           },
