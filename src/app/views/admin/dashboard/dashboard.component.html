@@ -6,15 +6,29 @@
             <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
                 <div class="rounded-t mb-0 px-4 py-3 border-0">
                     <div class="flex flex-wrap items-center">
-                        <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+                        <div class="relative w-full px-4 max-w-full flex-grow flex-1" style="text-align: center;">
                             <h3 class="font-semibold text-base text-slate-700">
                                 Update Monthly Report
                             </h3>
                         </div>
-                        <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
-                            <button class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
-                      Select Month
-                    </button>
+                        <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right" style="text-align: center;margin-top: 1rem;">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Select a Month</mat-label>
+                                <mat-select [(value)]="month" (selectionChange)="reRunInit()" disableRipple>
+                                    <mat-option value="Enero">Enero</mat-option>
+                                    <mat-option value="Febrero">Febrero</mat-option>
+                                    <mat-option value="Marzo">Marzo</mat-option>
+                                    <mat-option value="Abril">Abril</mat-option>
+                                    <mat-option value="Mayo">Mayo</mat-option>
+                                    <mat-option value="Junio">Junio</mat-option>
+                                    <mat-option value="Julio">Julio</mat-option>
+                                    <mat-option value="Agosto">Agosto</mat-option>
+                                    <mat-option value="Septiembre">Septiembre</mat-option>
+                                    <mat-option value="Octubre">Octubre</mat-option>
+                                    <mat-option value="Noviembre">Noviembre</mat-option>
+                                    <mat-option value="Diciembre">Diciembre</mat-option>
+                                </mat-select>
+                            </mat-form-field>
                         </div>
 
                     </div>

@@ -65,6 +65,10 @@ import { FirebaseService } from "./services/firebase.service";
 import { CardBotTrafficComponent } from "./components/cards/card-social-traffic copy/card-bot-traffic.component";
 import { CountdownViewComponent } from "./views/admin/inapp/inapps/countdown/countdown.component";
 import { FogViewComponent } from "./views/admin/inapp/inapps/fog/fog.component";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatOptionModule } from "@angular/material/core";
+import { MatSelectModule } from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -121,6 +125,10 @@ import { FogViewComponent } from "./views/admin/inapp/inapps/fog/fog.component";
     MatTableModule,
     MatPaginatorModule,
     MatDialogModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatOptionModule,
+    MatSelectModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [FirebaseService],
