@@ -11,7 +11,7 @@ export class CountdownViewComponent implements OnInit, OnDestroy {
   mobile = false;
 
   public dateNow = new Date();
-  public dDay = new Date("Aug 06 2022 00:00:00");
+  public dDay = new Date("Aug 08 2022 00:00:00");
   milliSecondsInASecond = 1000;
   hoursInADay = 24;
   minutesInAnHour = 60;

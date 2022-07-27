@@ -820,9 +820,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .box {
     width: 100%;
-    max-width: 600px;
     padding: 5px;
-    /* border: 2px solid #b78846; */
 }
 
 .box:before,
